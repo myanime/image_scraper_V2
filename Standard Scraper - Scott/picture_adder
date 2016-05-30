@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>picture_adder_final</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">picture_adder_final</td></tr>
+</thead><tbody>
+<!----------------------------------------TO CHANGE---------------------------------------->
+<!--Set up Base URL, arrays for Slugs and City Names-->
+<tr>
+	<td>store</td>
+	<td>http://www.test.com</td>
+	<td>base_url</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Array ()</td>
+	<td>slugs</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>-1</td>
+	<td>append</td>
+</tr>
+<!--------------------------------------------------------------------------------------------------->
+<!--Setting up Loop-->
+<tr>
+	<td>storeEval</td>
+	<td>javascript{storedVars['slugs'].length}</td>
+	<td>number_of_slugs</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>index</td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>${index} &lt; ${number_of_slugs}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<!--Get current slug from Array-->
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.slugs[storedVars.index]</td>
+	<td>my_current_slugs</td>
+</tr>
+<!--Open page and select Slug-->
+<tr>
+	<td>open</td>
+	<td>${base_url}/admin/content/areapage/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${my_current_slugs}${append}</td>
+	<td></td>
+</tr>
+<!--Set up Indexer for the Pictures-->
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.index + 1</td>
+	<td>picture_index</td>
+</tr>
+<!--Open Fields-->
+<tr>
+	<td>click</td>
+	<td>id=fieldsetcollapser0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=fieldsetcollapser1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=fieldsetcollapser2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=fieldsetcollapser3</td>
+	<td></td>
+</tr>
+<!--Opening Pictures-->
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=/html/body/div[2]/div[3]/div/form/div/fieldset[3]/div[1]/div/div[2]/label/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td>id_landscape_image_override_2</td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>name=id_landscape_image_override_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>name=id_landscape_image_override_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Filename</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Today</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=/html/body/div[2]/div[3]/div/div/div[1]/div/div/table/tbody/tr[${picture_index}]/td[1]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.index++</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=_save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

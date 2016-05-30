@@ -1,0 +1,50 @@
+with open("out", "wt") as fout:
+    with open("input", "rt") as fin:
+        for line in fin:
+            new = line.replace('<p>    History</p>', '<h2><strong>History</strong></h2>')
+            new = new.replace('<p>    Location</p>', '<h2><strong>Location</strong></h2>')
+            new = new.replace('<p>    Weather</p>', '<h2><strong>Weather</strong></h2>')
+            new = new.replace('<p>    Shopping</p>', '<h2><strong>Shopping</strong></h2>')
+            new = new.replace('<p>    Restaurants</p>', '<h2><strong>Restaurants</strong></h2>')
+            new = new.replace('<p>    Nightlife</p>', '<h2><strong>Nightlife</strong></h2>')
+            new = new.replace('<p>    Schools</p>', '<h2><strong>Schools</strong></h2>')
+            new = new.replace('<p>    Landmarks</p>', '<h2><strong>Landmarks</strong></h2>')
+            new = new.replace('<p>    Conclusion</p>', '<h2><strong>Conclusion</strong></h2>')
+            new = new.replace('<p>    Recreation</p>', '<h2><strong>Recreation</strong></h2>')
+            new = new.replace('<p>    Demographics</p>', '<h2><strong>Demographics</strong></h2>')
+            new = new.replace('<p>    Recreation / Things To Do</p>', '<h2><strong>Recreation / Things To Do</strong></h2>')
+            new = new.replace('<p>    Local / Notable Employers</p>', '<h2><strong>Local / Notable Employers</strong></h2>')
+            new = new.replace('<p>    Local/Notable Employers</p>', '<h2><strong>Local / Notable Employers</strong></h2>')
+            new = new.replace('<p>    Local Employers</p>', '<h2><strong>Local / Notable Employers</strong></h2>')
+
+            new = new.replace('<p>    <strong>History</strong></p>', '<h2><strong>History</strong></h2>')
+            new = new.replace('<p>    <strong>Location</strong></p>', '<h2><strong>Location</strong></h2>')
+            new = new.replace('<p>    <strong>Weather</strong></p>', '<h2><strong>Weather</strong></h2>')
+            new = new.replace('<p>    <strong>Shopping</strong></p>', '<h2><strong>Shopping</strong></h2>')
+            new = new.replace('<p>    <strong>Restaurants</strong></p>', '<h2><strong>Restaurants</strong></h2>')
+            new = new.replace('<p>    <strong>Nightlife</strong></p>', '<h2><strong>Nightlife</strong></h2>')
+            new = new.replace('<p>    <strong>Schools</strong></p>', '<h2><strong>Schools</strong></h2>')
+            new = new.replace('<p>    <strong>Landmarks</strong></p>', '<h2><strong>Landmarks</strong></h2>')
+            new = new.replace('<p>    <strong>Conclusion</strong></p>', '<h2><strong>Conclusion</strong></h2>')
+            new = new.replace('<p>    <strong>Recreation</strong></p>', '<h2><strong>Recreation</strong></h2>')
+            new = new.replace('<p>    <strong>Demographics</strong></p>', '<h2><strong>Demographics</strong></h2>')
+            new = new.replace('<p>    <strong>Recreation / Things To Do</strong></p>', '<h2><strong>Recreation / Things To Do</strong></h2>')
+            new = new.replace('<p>    <strong>Local / Notable Employers</strong></p>', '<h2><strong>Local / Notable Employers</strong></h2>')
+            new = new.replace('<p>    <strong>Local/Notable Employers</strong></p>', '<h2><strong>Local / Notable Employers</strong></h2>')
+            new = new.replace('<p>    <strong>Local Employers</strong></p>', '<h2><strong>Local / Notable Employers</strong></h2>')
+            
+            new = new.replace('</p>    </li></ul><ul>','</p>    </li>')
+            new = new.replace('<a name="_GoBack"></a>', '')
+            new = new.replace('<a name="_GoBack1"></a>', '')
+            new = new.replace('<a name="_GoBack2"></a>', '')
+            new = new.replace('<a name="_GoBack3"></a>', '')
+            new = new.replace('<a name="_GoBack4"></a>', '')
+            new = new.replace('<a name="_GoBack5"></a>', '')
+            new = new.replace('<a name="_GoBack6"></a>', '')
+            new = new.replace('<a name="_GoBack7"></a>', '')
+
+
+            new = new.replace('a href="', 'a target="_blank" href="')
+
+
+            fout.write(new)

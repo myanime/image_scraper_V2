@@ -1,0 +1,4 @@
+for file in *.jpg; do convert $file -resize 2200 r-$file; done
+gnash /home/myanime/all_indeed/uk/Ryan_-_Website_Articles.swf
+for file in *; do convert $file -resize 640x400^ -gravity center -extent 640x400 $file
+for file in *; do convert $file -gravity center -extent 640x400 $file

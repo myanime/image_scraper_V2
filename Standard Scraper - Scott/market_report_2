@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.realtor.ca/" />
+<title>market_report_2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">market_report_2</td></tr>
+</thead><tbody>
+<!----------------------------------------TO CHANGE---------------------------------------->
+<!--Set up Base URL, arrays for Slugs and City Names-->
+<tr>
+	<td>store</td>
+	<td>http://sandiegorealestatehunter.realgeeks.com</td>
+	<td>base_url</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Array('/east-county/','/north-county-coastal/','/north-county-inland/','/san-diego-central/','/san-diego-coastal/','/south-bay/')</td>
+	<td>slugs</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Array ('East County','North County Coastal','North County Inland','San Diego Central','San Diego Coastal','South Bay')</td>
+	<td>city_names</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Array ('East County','North County Coastal','North County Inland','San Diego Central','San Diego Coastal','South Bay')</td>
+	<td>city_names_apostrophy</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Array ('East County','North County Coastal','North County Inland','San Diego Central','San Diego Coastal','South Bay')</td>
+	<td>city_search</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>javascript{storedVars['slugs'].length}</td>
+	<td>city_names_search</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td></td>
+	<td>append</td>
+</tr>
+<!--------------------------------------------------------------------------------------------------->
+<!--Setting up Loop-->
+<tr>
+	<td>storeEval</td>
+	<td>javascript{storedVars['slugs'].length}</td>
+	<td>number_of_slugs</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>index</td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>${index} &lt; ${number_of_slugs}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<!--Get current city from Array-->
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.slugs[storedVars.index]</td>
+	<td>my_current_slugs</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.city_names[storedVars.index]</td>
+	<td>my_current_name</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.city_names_apostrophy[storedVars.index]</td>
+	<td>my_current_apostrophy</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.city_search[storedVars.index]</td>
+	<td>my_current_search</td>
+</tr>
+<!--Echo Current City Details-->
+<tr>
+	<td>echo</td>
+	<td>${my_current_slugs}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${my_current_name}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${my_current_apostrophy}</td>
+	<td></td>
+</tr>
+<!--Open page and select Slug-->
+<tr>
+	<td>open</td>
+	<td>${base_url}/admin/content/marketreportpage/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add market report page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=id_parent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=id_parent</td>
+	<td>label=${my_current_slugs}</td>
+</tr>
+<!--Change Title Meta Data and HTML-->
+<tr>
+	<td>type</td>
+	<td>id=id_title</td>
+	<td>${my_current_name} Real Estate Market Report 2016</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_meta_description</td>
+	<td>Here's the latest ${my_current_name} San Diego real estate market report for 2016 including active, pending, and sold property within the last 6 months - See It Now!</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_header</td>
+	<td>${my_current_name} San Diego Real Estate Market Report 2016</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_anchor_text</td>
+	<td>${my_current_name} Market Report</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_slug</td>
+	<td>market-report</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#mceu_13 &gt; button[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mceu_27</td>
+	<td>&lt;p&gt;Here's the current real time statistics for the ${my_current_name} real estate market - for all property types - including homes, condos, investment property, land, foreclosures, and short sales.&amp;nbsp;&lt;/p&gt; &lt;h2&gt;&lt;strong&gt;These sections will cover the following items:&lt;/strong&gt;&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Active&lt;/li&gt; &lt;/ul&gt; &lt;ul&gt; &lt;li&gt;Pending&lt;/li&gt; &lt;/ul&gt; &lt;ul&gt; &lt;li&gt;Sold&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Feel free to click on any property to get full details.&amp;nbsp;&lt;/p&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#mceu_29 &gt; button[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<!--Open Fields-->
+<tr>
+	<td>click</td>
+	<td>id=fieldsetcollapser0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=fieldsetcollapser1</td>
+	<td></td>
+</tr>
+<!--Change Field Meta Data-->
+<tr>
+	<td>type</td>
+	<td>id=id_number_of_properties</td>
+	<td>15</td>
+</tr>
+<!--#Search Form Display-->
+<tr>
+	<td>click</td>
+	<td>id=search-field-defaults-id_open</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=id_region</td>
+	<td>label=${my_current_search}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=id_list_price_min</td>
+	<td>label=No Limit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=/html/body/div/div/div/form/div[3]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--#Search Creator-->
+<tr>
+	<td>click</td>
+	<td>id=search-id_open</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>addSelection</td>
+	<td>css=li &gt; select</td>
+	<td>label=${my_current_apostrophy}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=div &gt; div &gt; div &gt; select</td>
+	<td>label=Newest Listings First</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.ReactModal__Content.ReactModal__Content--after-open &gt; div &gt; div &gt; div &gt; div &gt; button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/div[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.index++</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=_save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
